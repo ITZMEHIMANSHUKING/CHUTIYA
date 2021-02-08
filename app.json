@@ -16,12 +16,12 @@
       "API_ID": {
          "description": "Get API_ID from my.telegram.org - this is used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "1290191"
       },
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org - this is used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "d5c66bcd233ee7ca92eed75ec381fc7c"
       },
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
@@ -53,10 +53,10 @@
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
-         "value": ""
+         "value": "1021511005"
       },
       "OWNER_USERNAME": {
-         "description": "Your username",
+         "description": "ITZ_ME_HIMANSHU_KING",
          "value": ""
       },
       "DEV_USERS": {
@@ -103,7 +103,7 @@
          "value": ""
       },
       "TOKEN": {
-         "description": "Your bot token.",
+         "description": "1666691684:AAF19p9CAY6NzUmkpucvh0zKNkrIGGqDiYA.",
          "required": true,
          "value": ""
       },
