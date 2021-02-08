@@ -134,14 +134,45 @@ def send_start(bot, update):
         pass
 
     #chat = update.effective_chat  # type: Optional[Chat] and unused variable
-    text = "Hey there! My name is Haruka Aya - I'm here to help you manage your groups!\n\
-Click Help button to find out more about how to use me to my full potential.\n\n"
+   PM_START_TEXT = """
+Hi {}, my name is {}! 
+my name is  𖤐⃟♥️𝙈𝙄𝙎𝙃𝙏𝙄™𖤐⃟♥️  ! 
+cute and powerful group management bot..
+.
+You can find my list of available commands with /help.
+"""
 
-    text += "Join [Haruka Aya Group](https://t.me/HarukaAyaGroup) ( @HarukaAyaGroup ) if you need any support or help\n\n\
-Follow [Haruka Aya](https://t.me/HarukaAya) ( @HarukaAya ) if you want to keep up with the news, updates and bot downtime!\n\n\
-Made with love by @peaktogoo\n\nWant to add me to your group? [Click here!](t.me/HarukaAyaBot?startgroup=true)"
+HELP_STRINGS = """
+Hey there! My name is *{}*.
+I'm a Heroin and help admins manage their groups with cuteness! Have a look at the following for an idea of some of \
+the things I can help you with.
 
-    keyboard = [[InlineKeyboardButton(text="📢 Support Group", url="https://t.me/HarukaAyaGroup")]]
+*Main* commands available:
+ • /help: PM's you this message.
+ • /help <module name>: PM's you info about that module.
+ • /donate: information on how to donate!
+ • /settings:
+   • in PM: will send you your settings for all supported modules.
+   • in a group: will redirect you to pm, with all that chat's settings.
+
+
+{}
+And the following:
+""".format(
+    dispatcher.bot.first_name,
+    "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
+)
+
+SAITAMA_IMG = "https://telegra.ph/file/dde6c42b7ffbb0097ab58.jpg"
+
+DONATE_STRING = """Heya, glad to hear you want to donate!
+🛠You can support the project via [PAYTM](https://paytm.me/Vh-ykJB) or by contacting @ITZ_ME_HIMANSHU_KING \
+🤑Supporting isnt always financial! 
+🛠Those who cannot provide monetary support are welcome to help us develop the bot at @KAAL_GANG."""
+
+
+    keyboard = [[InlineKeyboardButton(text="📢 Support Group", url="https://t.me/mishti_support")]]
+    keyboard = [[Inlinekeyboardbutton(text="Owner",url="https://t.me/ITZ_ME_HIMANSHU_KING")]]
     keyboard += [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M")]]
     keyboard += [[InlineKeyboardButton(text="🇺🇸 Language", callback_data="set_lang_"), 
         InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
