@@ -102,7 +102,7 @@ And the following:
 SAITAMA_IMG = "https://telegra.ph/file/dde6c42b7ffbb0097ab58.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](https://www.paypal.me/drgameryt410) or by contacting @ITZ_ME_HIMANSHU_KING \
+ You can support the project via [Paypal](https://www.paypal.me/drgameryt410) or by contacting @DRGAMERIZOP \
  Supporting isnt always financial! \
  Jo Donation Nhi De Skte But Vo Khuch Krna Chahte Hai Vo team join kre @KAAL_GANG."""
 
