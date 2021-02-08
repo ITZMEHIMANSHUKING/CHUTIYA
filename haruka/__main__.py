@@ -24,9 +24,9 @@ from mishti import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from mishti.modules import ALL_MODULES
-from mishti.modules.helper_funcs.chat_status import is_user_admin
-from mishti.modules.helper_funcs.misc import paginate_modules
+from haruka.modules import ALL_MODULES
+from haruka.modules.helper_funcs.chat_status import is_user_admin
+from haruka.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
