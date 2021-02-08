@@ -56,8 +56,8 @@
          "value": "1021511005"
       },
       "OWNER_USERNAME": {
-         "description": "ITZ_ME_HIMANSHU_KING",
-         "value": ""
+         "description": "",
+         "value": "ITZ_ME_HIMANSHU_KING"
       },
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.)",
@@ -103,9 +103,9 @@
          "value": ""
       },
       "TOKEN": {
-         "description": "1666691684:AAF19p9CAY6NzUmkpucvh0zKNkrIGGqDiYA.",
+         "description": "from bot fathet.",
          "required": true,
-         "value": ""
+         "value": "1666691684:AAF19p9CAY6NzUmkpucvh0zKNkrIGGqDiYA"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: @MyGroupChatUsernameBlah. If this ever points to saitama support than consider you made an enemy.",
