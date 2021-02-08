@@ -49,24 +49,24 @@ def ban(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("I doubt that's a user.")
+        message.reply_text("Khuch to gadbad hai💃🕺")
         return log_message
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message != "User not found":
             raise
-        message.reply_text("Can't seem to find this person.")
+        message.reply_text("Sktiman hai ye 😂.")
         return log_message
     if user_id == bot.id:
-        message.reply_text("Oh yeah, ban myself, noob!")
+        message.reply_text("Bahut sahi ye din ke liye bni thi me, Shutdown automatically 📡!")
         return log_message
 
     if is_user_ban_protected(chat, user_id, member) and user not in DEV_USERS:
         if user_id == OWNER_ID:
-            message.reply_text("Trying to put me against a God level disaster huh?")
+            message.reply_text("Kya tum meko itna bda khatre ke taraf bhejna chahte ho?")
         elif user_id in DEV_USERS:
-            message.reply_text("I can't act against our own.")
+            message.reply_text("Me tumhare khilaaf nhi ja skti.")
         elif user_id in DRAGONS:
             message.reply_text(
                 "Fighting this Dragon here will put civilian lives at risk."
@@ -123,7 +123,7 @@ def ban(update: Update, context: CallbackContext) -> str:
             # Do not reply
             if silent:
                 return log
-            message.reply_text("Banned!", quote=False)
+            message.reply_text("Nikal chutiye(banned)!", quote=False)
             return log
         else:
             LOGGER.warning(update)
@@ -155,7 +155,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("I doubt that's a user.")
+        message.reply_text("Khuch to gadbad hai🤗")
         return log_message
 
     try:
@@ -163,14 +163,14 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
     except BadRequest as excp:
         if excp.message != "User not found":
             raise
-        message.reply_text("I can't seem to find this user.")
+        message.reply_text("Sktiman hai ye😂.")
         return log_message
     if user_id == bot.id:
-        message.reply_text("I'm not gonna BAN myself, are you crazy?")
+        message.reply_text("Me khuch ko hi ban karu, Kya tumhe pi hai kya aaj 🍺?")
         return log_message
 
     if is_user_ban_protected(chat, user_id, member):
-        message.reply_text("I don't feel like it.")
+        message.reply_text("Meko axxha noi lga")
         return log_message
 
     if not reason:

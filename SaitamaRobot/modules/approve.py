@@ -23,7 +23,7 @@ def approve(update, context):
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "I don't know who you're talking about, you're going to need to specify a user!"
+            "Ptaa noi kiske baare me baat krre ho aap🤔, Tumhe vo bnda/bndi chahye(user_not_found)"
         )
         return ""
     try:
@@ -32,7 +32,7 @@ def approve(update, context):
         return ""
     if member.status == "administrator" or member.status == "creator":
         message.reply_text(
-            "User is already admin - locks, blocklists, and antiflood already don't apply to them."
+            "Bhai ye admin hai😂 - locks, blocklists, and antiflood Don't do anything just chill🕺💃"
         )
         return ""
     if sql.is_approved(message.chat_id, user_id):
@@ -68,7 +68,7 @@ def disapprove(update, context):
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "I don't know who you're talking about, you're going to need to specify a user!"
+            "Ptaa noi kiske baare me baat krre ho aap🤔, Tumhe vo bnda/bndi chahye(user_not_found)"
         )
         return ""
     try:
@@ -76,7 +76,7 @@ def disapprove(update, context):
     except BadRequest:
         return ""
     if member.status == "administrator" or member.status == "creator":
-        message.reply_text("This user is an admin, they can't be unapproved.")
+        message.reply_text("Ye admin hai sir😋, So don't be oversmart 😒")
         return ""
     if not sql.is_approved(message.chat_id, user_id):
         message.reply_text(f"{member.user['first_name']} isn't approved yet!")
@@ -107,7 +107,7 @@ def approved(update, context):
         member = chat.get_member(int(i.user_id))
         msg += f"- `{i.user_id}`: {member.user['first_name']}\n"
     if msg.endswith("approved.\n"):
-        message.reply_text(f"No users are approved in {chat_title}.")
+        message.reply_text(f"Sab nalle hai idhr(no one allow) in the {chat_title}.")
         return ""
     else:
         message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
@@ -123,16 +123,16 @@ def approval(update, context):
     member = chat.get_member(int(user_id))
     if not user_id:
         message.reply_text(
-            "I don't know who you're talking about, you're going to need to specify a user!"
+            "Ptaa noi kiske baare me baat krre ho aap🤔, Tumhe vo bnda/bndi chahye(user_not_found)"
         )
         return ""
     if sql.is_approved(message.chat_id, user_id):
         message.reply_text(
-            f"{member.user['first_name']} is an approved user. Locks, antiflood, and blocklists won't apply to them."
+            f"{member.user['first_name']} is an PRO USER SPOTTED. Locks, antiflood, and blocklists won't apply to them."
         )
     else:
         message.reply_text(
-            f"{member.user['first_name']} is not an approved user. They are affected by normal commands."
+            f"{member.user['first_name']} is NUB USER SPOTTED. They are affected by normal commands."
         )
 
 
@@ -143,7 +143,7 @@ def unapproveall(update: Update, context: CallbackContext):
     member = chat.get_member(user.id)
     if member.status != "creator" and user.id not in DRAGONS:
         update.effective_message.reply_text(
-            "Only the chat owner can unapprove all users at once."
+            "Onli group ka maalik hi unapprove kr skta hai ek bar me saaro ko🛠."
         )
     else:
         buttons = InlineKeyboardMarkup(
@@ -181,18 +181,18 @@ def unapproveall_btn(update: Update, context: CallbackContext):
                 sql.disapprove(chat.id, user_id)
 
         if member.status == "administrator":
-            query.answer("Only owner of the chat can do this.")
+            query.answer("Onli owner hi kr skta hai nub dhur rahe")
 
         if member.status == "member":
-            query.answer("You need to be admin to do this.")
+            query.answer("Admin bnja be.")
     elif query.data == "unapproveall_cancel":
         if member.status == "creator" or query.from_user.id in DRAGONS:
             message.edit_text("Removing of all approved users has been cancelled.")
             return ""
         if member.status == "administrator":
-            query.answer("Only owner of the chat can do this.")
+            query.answer("Onli owner hi kr skta hai nub dhur rahe.")
         if member.status == "member":
-            query.answer("You need to be admin to do this.")
+            query.answer("Uh need to be owner.")
 
 
 __help__ = """

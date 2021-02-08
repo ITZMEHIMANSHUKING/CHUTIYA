@@ -44,14 +44,14 @@ def promote(update: Update, context: CallbackContext) -> str:
         not (promoter.can_promote_members or promoter.status == "creator")
         and user.id not in DRAGONS
     ):
-        message.reply_text("You don't have the necessary rights to do that!")
+        message.reply_text("Apke Pass Isko Krne Ke liye Right Noi Hai😂")
         return
 
     user_id = extract_user(message, args)
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "Tumhe Dikh Nhi Raha Hai Id/Username Wrong Hai😛."
         )
         return
 
@@ -61,11 +61,11 @@ def promote(update: Update, context: CallbackContext) -> str:
         return
 
     if user_member.status == "administrator" or user_member.status == "creator":
-        message.reply_text("How am I meant to promote someone that's already an admin?")
+        message.reply_text("Me Kisi Ko kese Promote Karu Jo Pehle Se hi Promote Hai🙂?")
         return
 
     if user_id == bot.id:
-        message.reply_text("I can't promote myself! Get an admin to do it for me.")
+        message.reply_text("Ooi Me Khudko Hi kese Promote Karu! Owner Ko leke aao😊")
         return
 
     # set same perms as bot - bot can't assign higher perms than itself!
@@ -86,14 +86,14 @@ def promote(update: Update, context: CallbackContext) -> str:
         )
     except BadRequest as err:
         if err.message == "User_not_mutual_contact":
-            message.reply_text("I can't promote someone who isn't in the group.")
+            message.reply_text("Me isko promote noi kr skti.(becoz Ye group me noi hai)")
         else:
-            message.reply_text("An error occured while promoting.")
+            message.reply_text(" Khuch to gadbad hai(daya ptaa lgao😂).")
         return
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully promoted <b>{user_member.user.first_name or user_id}</b>!",
+        f"Promote kr diya khush hoja Ab💃🕺 <b>{user_member.user.first_name or user_id}</b>!",
         parse_mode=ParseMode.HTML,
     )
 
@@ -124,7 +124,7 @@ def demote(update: Update, context: CallbackContext) -> str:
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "Tumhe dikh nhi raha hai username/id sahi noi hai😒😏.."
         )
         return
 
@@ -134,15 +134,15 @@ def demote(update: Update, context: CallbackContext) -> str:
         return
 
     if user_member.status == "creator":
-        message.reply_text("This person CREATED the chat, how would I demote them?")
+        message.reply_text("Oo right 😏, Owner ko DeMotte noi kr🤪")
         return
 
     if not user_member.status == "administrator":
-        message.reply_text("Can't demote what wasn't promoted!")
+        message.reply_text("Demote noi  kr skti😌!")
         return
 
     if user_id == bot.id:
-        message.reply_text("I can't demote myself! Get an admin to do it for me.")
+        message.reply_text("Chutiya hai kya be🥱?Owner ko bhola teri bski baat noi")
         return
 
     try:
@@ -161,7 +161,7 @@ def demote(update: Update, context: CallbackContext) -> str:
 
         bot.sendMessage(
             chat.id,
-            f"Sucessfully demoted <b>{user_member.user.first_name or user_id}</b>!",
+            f"demote kr diya mene😂 <b>{user_member.user.first_name or user_id}</b>!",
             parse_mode=ParseMode.HTML,
         )
 
@@ -175,8 +175,8 @@ def demote(update: Update, context: CallbackContext) -> str:
         return log_message
     except BadRequest:
         message.reply_text(
-            "Could not demote. I might not be admin, or the admin status was appointed by another"
-            " user, so I can't act upon them!"
+            "Demote noi hua🤔🤔. Admin noi hai??, ya fir kisi aur ne promotion diya hai isko😂"
+            " agr esa hai toh me khuch na kr skti🥱"
         )
         return
 
@@ -212,46 +212,46 @@ def set_title(update: Update, context: CallbackContext):
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "Tumhe dikh nhi raha hai username/id sahi noi hai😏."
         )
         return
 
     if user_member.status == "creator":
         message.reply_text(
-            "This person CREATED the chat, how can i set custom title for him?"
+            "Baap ka title change karega?, Owner ka title me kese change karu🥺?"
         )
         return
 
     if user_member.status != "administrator":
         message.reply_text(
-            "Can't set title for non-admins!\nPromote them first to set custom title!"
+            "Me kisi non admin ka title kese du🤔!\nPromote mar usko🤗😋!"
         )
         return
 
     if user_id == bot.id:
         message.reply_text(
-            "I can't set my own title myself! Get the one who made me admin to do it for me."
+            "Khuch bhi mtlb Khuch bhi😋! Get the owner tu change my title 🙂."
         )
         return
 
     if not title:
-        message.reply_text("Setting blank title doesn't do anything!")
+        message.reply_text("kya apko title noi chahiye🤔")
         return
 
     if len(title) > 16:
         message.reply_text(
-            "The title length is longer than 16 characters.\nTruncating it to 16 characters."
+            "Onli 16 wards ka rakho plz🥺.\nagr 16 se jada hua to me delete kr dungi🤗."
         )
 
     try:
         bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
     except BadRequest:
-        message.reply_text("I can't set custom title for admins that I didn't promote!")
+        message.reply_text("Me uska title set nhi kr skti jinko me promote noi kri😒!")
         return
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully set title for <code>{user_member.user.first_name or user_id}</code> "
+        f"title change ab nacho💃🕺  <code>{user_member.user.first_name or user_id}</code> "
         f"to <code>{html.escape(title[:16])}</code>!",
         parse_mode=ParseMode.HTML,
     )
@@ -343,11 +343,11 @@ def invite(update: Update, context: CallbackContext):
             update.effective_message.reply_text(invitelink)
         else:
             update.effective_message.reply_text(
-                "I don't have access to the invite link, try changing my permissions!"
+                "Mere pass Group Ka invite link share ka permission noi hai give and try🥺!"
             )
     else:
         update.effective_message.reply_text(
-            "I can only give you invite links for supergroups and channels, sorry!"
+            "Me sirf supergroup/channels ka invite links de skti hu otherwise,📡sorry!"
         )
 
 
