@@ -14,7 +14,6 @@ from haruka import (
     TOKEN,
     URL,
     WEBHOOK,
-    SUPPORT_CHAT,
     dispatcher,
     StartTime,
     telethn,
