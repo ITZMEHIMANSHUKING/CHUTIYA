@@ -134,42 +134,13 @@ def send_start(bot, update):
         pass
 
     #chat = update.effective_chat  # type: Optional[Chat] and unused variable
-   PM_START_TEXT = """
+   PM_START = """
 Hi {}, my name is {}! 
 my name is  𖤐⃟♥️𝙈𝙄𝙎𝙃𝙏𝙄™𖤐⃟♥️  ! 
-cute and powerful group management bot..
-.
-You can find my list of available commands with /help.
-"""
-
-HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a Heroin and help admins manage their groups with cuteness! Have a look at the following for an idea of some of \
-the things I can help you with.
-
-*Main* commands available:
- • /help: PM's you this message.
- • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
- • /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
-
-
-{}
-And the following:
-""".format(
-    dispatcher.bot.first_name,
-    "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
-)
-
-SAITAMA_IMG = "https://telegra.ph/file/dde6c42b7ffbb0097ab58.jpg"
-
-DONATE_STRING = """Heya, glad to hear you want to donate!
-🛠You can support the project via [PAYTM](https://paytm.me/Vh-ykJB) or by contacting @ITZ_ME_HIMANSHU_KING \
-🤑Supporting isnt always financial! 
-🛠Those who cannot provide monetary support are welcome to help us develop the bot at @KAAL_GANG."""
-
+cute and powerful group management bot
+click /help to check all possible commands😆.
+/antispam on."""
+mishti_img = "https://images3.alphacoders.com/684/684694.jpg"
 
     keyboard = [[InlineKeyboardButton(text="📢 Support Group", url="https://t.me/mishti_support")]]
     keyboard = [[Inlinekeyboardbutton(text="Owner",url="https://t.me/ITZ_ME_HIMANSHU_KING")]]
@@ -207,7 +178,7 @@ def control_panel(bot, update):
 
         LOGGER.info(query.data)
     else:
-        M_match = "Haruka Aya is best bot" #LMAO, don't uncomment
+        M_match = "Mishti is best bot" #LMAO, don't uncomment
 
     if M_match:
         text = "*Control panel* 🛠"
