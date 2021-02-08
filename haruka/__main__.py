@@ -4,7 +4,7 @@ import re
 from sys import argv
 from typing import Optional
 
-from haruka import (
+from mishti import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -24,9 +24,9 @@ from haruka import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from haruka.modules import ALL_MODULES
-from haruka.modules.helper_funcs.chat_status import is_user_admin
-from haruka.modules.helper_funcs.misc import paginate_modules
+from mishti.modules import ALL_MODULES
+from mishti.modules.helper_funcs.chat_status import is_user_admin
+from mishti.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -232,11 +232,11 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="❤MISHTI_SUPPORT❤",
-                                url=f"https://t.me/{SUPPORT_CHAT}",
+                                url=f"https://t.me/mishti_support",
                             ),
                             InlineKeyboardButton(
                                 text="🛠MISHTI_UPDATE🛠",
-                                url="https://t.me/OnePunchUpdates",
+                                url="https://t.me/mishti_update",
                             ),
                         ],
                         [
