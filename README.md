@@ -1,2 +1,4 @@
-# CHUTIYA
-𝘼𝘽𝙊𝙐𝙏 🤖 𝙏𝙃𝙄𝙎 𝘽𝙊𝙏 🤔 𖤐⃟♥️𝙈𝙄𝙎𝙃𝙏𝙄™𖤐⃟♥️(@MISHTIOP_BOT)  🔧MISHTI BOT IZ GROUP MANAGER BOT😋 WITH INTERESTING FEATURES 🙄AND ESY TO USE ☸PLEASE ADD MISHTI IN OUR GROUP🙂 📡MISHTI IZ UNDER CONSTRUCTION⚒ JOIN FOR MORE UPDATES @mishti_update AND GROUP @mishti_support  MADE_BY NUB🥺 @ITZ_ME_HIMANSHU_KING POWERED BY MOI BEST FRND @Its_aarush #KING #WANT #MORE #QUEENS
+
+# GroupManager
+
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/ITZMEHIMANSHUKING/CHUTIYA)
