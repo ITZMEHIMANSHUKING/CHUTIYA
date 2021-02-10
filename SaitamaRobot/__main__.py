@@ -99,7 +99,7 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-SAITAMA_IMG = "https://telegra.ph/file/dde6c42b7ffbb0097ab58.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/b58bb6536662b8000514e.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project via [Paypal](https://www.paypal.me/drgameryt410) or by contacting @DRGAMERIZOP \
@@ -246,7 +246,7 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="👑Pro Owner👑",
-                                url="https://t.me/ITZ_ME_HIMANSHU_KING",
+                                url="https://t.me/Its_aarush",
                             )
                         ],
                     ]
